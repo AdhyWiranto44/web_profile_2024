@@ -1,0 +1,16 @@
+{
+  "name": "web_profile_2024",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile_sass": "sass assets/css/style.scss dist/css/index.css",
+    "watch_sass": "sass --watch assets/css:dist/css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.70.0"
+  }
+}
