@@ -1,14 +1,108 @@
 $bg-primary: #BFCFE7
 $temp: #ff00ea
-  
+$text-blue-dark: #4942E4
+$text-blue-light: #8D94F1
+
+*
+  font-family: "poppins", sans-serif
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  border: none
+  text-decoration: none
+
 body
   background-color: $bg-primary
 
+.navbar, .projects, .history, .interests, .posts
+  margin: 1rem
+
+#projects, #history, #interests, #posts
+  height: 500px
+
 .navbar
+  z-index: 9999
+  position: fixed
+  left: 0
+  right: 0
   .top
-    background-color: $temp
     display: flex
     justify-content: space-between
+    position: relative
     .nav
-      display: flex
+      text-align: right
       list-style: none
+      position: absolute
+      top: 100%
+      right: 0
+    li
+      margin-left: .5rem
+      color: $text-blue-dark
+      font-weight: bolder
+      a
+        color: $text-blue-dark
+    li:last-child
+      margin-left: 2rem
+    .hamburger-menu
+      cursor: pointer
+      width: 48px
+      height: 48px
+      color: $text-blue-dark
+  .navigation
+    .nav
+      list-style: none
+      position: fixed
+      bottom: 2.5rem
+      li
+        display: inline
+        cursor: pointer
+        margin-right: .3rem
+        font-size: 2rem
+        font-weight: bold
+        a
+          transition: .3s
+          // color: $text-blue-light
+      // li:hover
+      //   font-size: 6rem
+      li:hover a
+        color: $text-blue-dark
+
+      // li:first-child
+      //   font-size: 6rem
+      // li:nth-child(2)
+      //   font-size: 4rem
+      // li:nth-child(3)
+      //   font-size: 2rem
+      // li:nth-child(4)
+      //   font-size: 2rem
+
+.home
+  display: flex
+  .hero-image
+    width: 60%
+    height: 100vh
+    // background-color: grey
+
+.hidden
+  display: none
+
+.text-blue-dark
+  color: $text-blue-dark
+
+.text-blue-light
+  color: $text-blue-light
+
+@media ( min-width: 1024px )
+  .navbar, .projects, .history, .interests, .posts
+    margin: 2.5rem 5rem
+
+  .navbar
+    .top
+      align-items: center
+      .nav
+        display: flex
+        text-align: left
+        position: static
+      .hamburger-menu
+        display: none
