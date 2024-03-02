@@ -1,9 +1,11 @@
 // NAVBAR TOP
 const hamburgerMenu = document.getElementsByClassName("hamburger-menu")[0];
 const topNav = document.querySelector(".navbar .top .nav");
+const navBottom = document.querySelector(".navbar .navigation .nav");
 
 hamburgerMenu.addEventListener("click", (e) => {
   topNav.classList.toggle("hidden");
+  navBottom.classList.toggle("hidden");
   hamburgerMenu.setAttribute("data-feather", "x");
 });
 
@@ -38,3 +40,11 @@ const changeNavItemColor = async function () {
     }
   });
 }
+
+// WHEN OTHER AREA IS CLICKED THAN NAVBAR
+document.addEventListener("click", (e) => {
+  if (!hamburgerMenu.contains(e.target) && !topNav.contains(e.target)) {
+    topNav.classList.add("hidden");
+    navBottom.classList.add("hidden");
+  }
+});

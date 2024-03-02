@@ -79,10 +79,18 @@ body
 
 .home
   display: flex
+
   .hero-image
-    width: 60%
+    display: none
+
+  .hero-title
+    display: flex
+    justify-content: center
+    align-items: center
     height: 100vh
-    // background-color: grey
+    font-size: 4rem
+    line-height: 6.5rem
+    color: $text-blue-dark
 
 .hidden
   display: none
@@ -106,3 +114,21 @@ body
         position: static
       .hamburger-menu
         display: none
+    .navigation
+      .nav
+        display: flex
+
+  .home
+    .hero-image
+      display: flex
+      justify-content: center
+      width: 60vw
+      height: 100vh
+      overflow: hidden
+
+      img
+        height: 100%
+
+    .hero-title
+      width: 40vw
+      margin-left: 2rem
