@@ -33,12 +33,18 @@ const setDefaultNavItemColor = async function () {
 };
 
 const changeNavItemColor = async function () {
-  navBottomLists.forEach(item => {
-    if (pageSection == item.getAttribute("href")) {
-      item.classList.remove("text-blue-light");
-      item.classList.add("text-blue-dark");
-    }
-  });
+  if (!window.location.href.split("#")[1]) {
+    setDefaultNavItemColor();
+    navBottomLists[0].classList.remove("text-blue-light");
+    navBottomLists[0].classList.add("text-blue-dark");
+  } else {
+    navBottomLists.forEach(item => {
+      if (pageSection == item.getAttribute("href")) {
+        item.classList.remove("text-blue-light");
+        item.classList.add("text-blue-dark");
+      }
+    });
+  }
 }
 
 // WHEN OTHER AREA IS CLICKED THAN NAVBAR
