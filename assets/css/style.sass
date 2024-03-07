@@ -20,6 +20,7 @@ body
 
 #projects, #history, #interests, #posts
   height: 500px
+  padding-top: 6.5rem
 
 .navbar
   z-index: 9999
@@ -54,11 +55,15 @@ body
       list-style: none
       position: fixed
       bottom: 2.5rem
+      transition: .2s
+      background-color: rgba(191, 207, 231, .1)
+      backdrop-filter: blur(16px)
+      border-radius: 4px
+      padding: .5rem
       li
-        display: inline
+        display: block
         cursor: pointer
         margin-right: .3rem
-        font-size: 2rem
         font-weight: bold
         a
           transition: .3s
@@ -103,8 +108,14 @@ body
       .hamburger-menu
         display: none
     .navigation
+      &:hover .nav
+        border-radius: 16px
+      &:hover .nav li
+        font-size: 2rem
       .nav
         display: flex
+        li
+          display: inline
 
   .home
     .hero-image
