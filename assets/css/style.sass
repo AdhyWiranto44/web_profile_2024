@@ -37,12 +37,14 @@ body
       position: absolute
       top: 100%
       right: 0
+      padding-right: 1rem
     li
       margin-left: .5rem
       color: $text-blue-dark
       font-weight: bolder
       a
         color: $text-blue-dark
+
     li:last-child
       margin-left: 2rem
     .hamburger-menu
@@ -56,10 +58,6 @@ body
       position: fixed
       bottom: 2.5rem
       transition: .2s
-      background-color: rgba(191, 207, 231, .1)
-      backdrop-filter: blur(16px)
-      border-radius: 4px
-      padding: .5rem
       li
         display: block
         cursor: pointer
@@ -69,6 +67,14 @@ body
           transition: .3s
       li:hover a
         color: $text-blue-dark
+
+  // start of blurry navbar
+.navbar .top .nav, .navbar .navigation .nav
+  background-color: rgba(191, 207, 231, .1)
+  backdrop-filter: blur(16px)
+  border-radius: .4rem
+  padding: .5rem
+// end of blurry navbar
 
 .home
   display: flex
@@ -105,11 +111,10 @@ body
         display: flex
         text-align: left
         position: static
+        padding-right: 0
       .hamburger-menu
         display: none
     .navigation
-      &:hover .nav
-        border-radius: 16px
       &:hover .nav li
         font-size: 2rem
       .nav
