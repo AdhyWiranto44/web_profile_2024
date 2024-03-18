@@ -14,9 +14,14 @@ $text-blue-light: #8D94F1
 
 body
   background-color: $bg-primary
+  margin-bottom: 500px
+  overflow: hidden
 
 .navbar, .projects, .history, .interests, .posts
   margin: 1rem
+
+  h2
+    margin-bottom: 2rem
 
 #projects, #history, #interests, #posts
   height: 500px
@@ -99,6 +104,55 @@ body
 
 .text-blue-light
   color: $text-blue-light
+
+.projects
+  position: relative
+
+  .project-list
+    display: flex
+    overflow-x: scroll
+
+  .project-item-image, .cta-overlay
+    width: 30rem
+    height: 30rem
+    border-radius: 1rem
+    overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
+
+  .project-item-image
+    margin-right: 3rem
+
+  .cta-overlay
+    position: absolute
+    background-color: rgba(0, 0, 0, .5)
+    opacity: 0
+    transition: .2s
+
+    &:hover
+      opacity: 1
+
+    a
+      background-color: #525CEB
+      color: #BFCFE7
+      font-size: 1.5rem
+      font-weight: 700
+      padding: .5rem 2.5rem
+      border-radius: .5rem
+
+      &:hover
+        background-color: #424abe
+      
+      &:active
+        background-color: #31378d
+    
+  .project-item-description
+    margin-top: 1.25rem
+    width: 30rem
+
+    p
+      margin-top: 1rem
 
 @media ( min-width: 1024px )
   .navbar, .projects, .history, .interests, .posts
