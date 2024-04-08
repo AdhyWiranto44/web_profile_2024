@@ -79,72 +79,83 @@
         <h2 class="text-blue-light">
           My <span class="text-blue-dark">Projects</span>
         </h2>
-        <div class="project-list">
-          <div class="project-item">
-            <div class="project-item-image">
-              <img
-                src="/assets/img/portfolios/moneytory.webp"
-                alt="Moneytory"
-              />
-              <div class="cta-overlay">
-                <a href="#">Visit</a>
+        <div class="project-list swiper">
+          <div class="swiper-wrapper">
+            <div class="project-item swiper-slide">
+              <div class="project-item-image">
+                <img
+                  src="/assets/img/portfolios/moneytory.webp"
+                  alt="Moneytory"
+                />
+                <div class="cta-overlay">
+                  <a href="#">Visit</a>
+                </div>
+              </div>
+              <div class="project-item-description">
+                <h3>Project 1</h3>
+                <small>Tech 1, Tech 2, Tech 3</small>
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literature
+                  from 45 BC.
+                </p>
               </div>
             </div>
-            <div class="project-item-description">
-              <h3>Project 1</h3>
-              <small>Tech 1, Tech 2, Tech 3</small>
-              <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC.
-              </p>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-item-image">
-              <img
-                src="/assets/img/portfolios/moneytory.webp"
-                alt="Moneytory"
-              />
-              <div class="cta-overlay">
-                <a href="#">Visit</a>
+            <div class="project-item swiper-slide">
+              <div class="project-item-image">
+                <img
+                  src="/assets/img/portfolios/moneytory.webp"
+                  alt="Moneytory"
+                />
+                <div class="cta-overlay">
+                  <a href="#">Visit</a>
+                </div>
+              </div>
+              <div class="project-item-description">
+                <h3>Project 1</h3>
+                <small>Tech 1, Tech 2, Tech 3</small>
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literature
+                  from 45 BC.
+                </p>
               </div>
             </div>
-            <div class="project-item-description">
-              <h3>Project 1</h3>
-              <small>Tech 1, Tech 2, Tech 3</small>
-              <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC.
-              </p>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-item-image">
-              <img
-                src="/assets/img/portfolios/moneytory.webp"
-                alt="Moneytory"
-              />
-              <div class="cta-overlay">
-                <a href="#">Visit</a>
+            <div class="project-item swiper-slide">
+              <div class="project-item-image">
+                <img
+                  src="/assets/img/portfolios/moneytory.webp"
+                  alt="Moneytory"
+                />
+                <div class="cta-overlay">
+                  <a href="#">Visit</a>
+                </div>
+              </div>
+              <div class="project-item-description">
+                <h3>Project 1</h3>
+                <small>Tech 1, Tech 2, Tech 3</small>
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literature
+                  from 45 BC.
+                </p>
               </div>
             </div>
-            <div class="project-item-description">
-              <h3>Project 1</h3>
-              <small>Tech 1, Tech 2, Tech 3</small>
-              <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC.
-              </p>
-            </div>
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <!-- If we need navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
           </div>
         </div>
       </div>
-      <!-- <div id="history" class="history">history</div>
+      <div id="history" class="history">history</div>
       <div id="interests" class="interests">interests</div>
-      <div id="posts" class="posts">posts</div> -->
+      <div id="posts" class="posts">posts</div>
     </div>
 
     <script>
@@ -156,6 +167,19 @@
         // Optional parameters
         direction: "horizontal",
         loop: true,
+        // Default parameters
+        // slidesPerView: 3,
+        // spaceBetween: 160,
+        breakpoints: {
+          1204: {
+            slidesPerView: 2,
+            spaceBetween: 160,
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+        },
 
         // If we need pagination
         pagination: {
