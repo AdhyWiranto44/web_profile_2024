@@ -111,16 +111,18 @@ body
     overflow-x: auto
 
   .project-item-image, .cta-overlay
-    width: 30rem
-    height: 30rem
+    width: 100%
+    height: 25rem
     border-radius: 1rem
     overflow: hidden
     display: flex
     justify-content: center
     align-items: center
-
-  .project-item-image
-    // margin-right: 3rem
+    
+    img
+      object-fit: cover
+      height: 100%
+      width: 100%
 
   .cta-overlay
     position: absolute
@@ -189,3 +191,9 @@ body
       width: 40vw
       margin-left: 2rem
       margin-right: 6rem
+
+    .projects
+      .project-item-image, .cta-overlay
+        width: 30rem
+        height: 30rem
+
