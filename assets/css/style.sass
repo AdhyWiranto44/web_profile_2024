@@ -1,0 +1,554 @@
+$bg-primary: #BFCFE7
+$temp: #ff00ea
+$text-blue-dark: #4942E4
+$text-blue-light: #8D94F1
+
+*
+  font-family: "poppins", sans-serif
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  border: none
+  text-decoration: none
+
+html
+  scroll-behavior: smooth
+
+body
+  background-color: $bg-primary
+  overflow-x: hidden
+
+.navbar, .home, .projects, .history, .interests, .posts
+  margin: 1rem 2rem
+
+  h2
+    margin-bottom: 2rem
+
+#projects, #history, #interests, #posts
+  padding-top: 6.5rem
+
+.navbar
+  z-index: 9999
+  position: fixed
+  left: 0
+  right: 0
+
+  .top
+    display: flex
+    justify-content: space-between
+    position: relative
+    .nav
+      text-align: right
+      list-style: none
+      position: absolute
+      top: 100%
+      right: 0
+      padding-right: 1rem
+    li
+      margin-left: .5rem
+      color: $text-blue-dark
+      font-weight: bolder
+      a
+        color: $text-blue-dark
+
+    li:last-child
+      margin-left: 2rem
+    .hamburger-menu
+      cursor: pointer
+      width: 48px
+      height: 48px
+      color: $text-blue-dark
+  .navigation
+    .nav
+      list-style: none
+      position: fixed
+      bottom: 2.5rem
+      transition: .2s
+      li
+        display: block
+        cursor: pointer
+        margin-right: .3rem
+        font-weight: bold
+        a
+          transition: .3s
+      li:hover a
+        color: $text-blue-dark
+
+  // start of blurry navbar
+.navbar .top .nav, .navbar .navigation .nav
+  background-color: rgba(191, 207, 231, .1)
+  backdrop-filter: blur(16px)
+  border-radius: .4rem
+  padding: .5rem
+// end of blurry navbar
+
+.home
+  display: flex
+
+  .hero-image
+    display: none
+
+  .hero-title
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+    font-size: 3.5rem
+    line-height: 5.5rem
+    color: $text-blue-dark
+
+.hidden
+  display: none
+
+.text-blue-dark
+  color: $text-blue-dark
+
+.text-blue-light
+  color: $text-blue-light
+
+.projects
+  position: relative
+
+  .project-list
+    display: flex
+    scrollbar-width: none
+    overflow: hidden
+
+    .project-item-image a
+      width: 208px
+      height: 55px
+      display: flex
+      align-items: center
+      justify-content: center
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  .project-item-image, .cta-overlay
+    width: 100%
+    border-radius: 1rem
+    overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    padding-top: 100%
+
+    img
+      position: absolute
+      top: 0
+      left: 0
+      object-fit: cover
+      height: 100%
+      width: 100%
+
+  .cta-overlay
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba(0, 0, 0, .5)
+    opacity: 0
+    transition: .2s
+
+    &:hover
+      opacity: 1
+
+    a
+      background-color: #525CEB
+      color: #BFCFE7
+      font-size: 1.5rem
+      font-weight: 700
+      padding: .5rem 2.5rem
+      border-radius: .5rem
+
+      &:hover
+        background-color: #424abe
+
+      &:active
+        background-color: #31378d
+
+  .project-item-description
+    margin-top: 1.25rem
+
+    p
+      margin-top: 1rem
+
+.history
+  &-container
+    color: $text-blue-dark
+    display: none
+    margin-top: 24px
+
+    &.is-active
+      display: block
+
+    &--item
+      display: flex
+
+      & > p
+        display: none
+
+      & > div
+        border-left: 4px solid $text-blue-dark
+        margin-left: 12px
+        padding-left: 24px
+        width: calc(100% - 12px)
+
+        h3
+          font-size: 24px
+          margin-bottom: 8px
+
+        & > p
+          font-weight: bold
+          position: relative
+
+          &::before
+            content: ''
+            display: inline-block
+            width: 24px
+            height: 24px
+            border-radius: 50%
+            background-color: $text-blue-dark
+            position: absolute
+            left: -38px
+
+      &:not(:last-child)
+        & > div
+          padding-bottom: 58px
+
+      ul
+        margin-left: 1.5rem
+
+        li
+          word-wrap: break-word
+
+  &-toggle
+    display: flex
+    justify-content: center
+    gap: 8px
+
+    p
+      backdrop-filter: blur(16px)
+      border-radius: .4rem
+      padding: .5rem .75rem
+      cursor: pointer
+      transition: .2s ease-in-out
+      font-weight: bold
+      color: #928ef2
+
+      &.toggle-active
+        font-weight: bold
+        background-color: #b8bbe9
+        color: $text-blue-dark
+
+      &:hover
+        background-color: $text-blue-light
+        color: $text-blue-dark
+
+.interests
+  &-container
+    &--list
+      display: grid
+      grid-template-columns: 1fr
+      gap: 20px
+
+    &--item
+      width: 100%
+      padding-top: 50%
+      position: relative
+
+      img
+        object-fit: cover
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+
+.posts
+  position: relative
+
+  .post-list
+    display: flex
+    scrollbar-width: none
+    overflow: hidden
+
+    .post-item
+      display: flex
+      flex-direction: column
+      gap: 1.25rem
+
+    .post-item-image a
+      width: 208px
+      height: 55px
+      display: flex
+      align-items: center
+      justify-content: center
+
+    .post-item-image
+      width: 100%
+      border-radius: 1rem
+      overflow: hidden
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      padding-top: 65%
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        object-fit: cover
+        height: 100%
+        width: 100%
+
+    .post-item-description
+      p
+        margin-top: 1rem
+
+    .post-item .cta-button
+      transition: .2s
+      background-color: #525CEB
+      color: #BFCFE7
+      font-size: 1.5rem
+      font-weight: 700
+      padding: .5rem 2.5rem
+      border-radius: .5rem
+      width: fit-content
+
+      &:hover
+        background-color: #424abe
+
+      &:active
+        background-color: #31378d
+
+footer
+  background-color: $text-blue-dark
+  color: $text-blue-light
+  padding: 2rem
+
+  .top-section
+    display: flex
+    flex-direction: column
+    gap: 40px
+
+    .closing-messages
+      h3
+        font-size: 64px
+        line-height: 1
+      
+      p
+        font-size: 18px
+
+    .sitemaps 
+      a
+        color: $text-blue-light
+
+        &:hover
+          color: white
+      
+      ul
+        p
+          font-weight: bold
+
+        li
+          list-style: none
+
+  .bottom-section
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: 2rem
+
+    .contacts
+      display: flex
+      flex-direction: column
+      gap: .5rem
+
+      p
+        font-weight: bold
+
+      ul
+        li
+          list-style: none
+          display: inline
+
+          a
+            color: $text-blue-light
+    
+    .go-top
+      a
+        color: $text-blue-light
+
+@media ( min-width: 1024px )
+  .navbar, .projects, .history, .interests, .posts
+    margin: 2.5rem 5rem
+
+  .projects
+    margin-right: 0
+
+  .navbar
+    .top
+      align-items: center
+      .nav
+        display: flex
+        text-align: left
+        position: static
+        padding-right: 0
+      .hamburger-menu
+        display: none
+    .navigation
+      &:hover .nav li
+        font-size: 2rem
+      .nav
+        display: flex
+        li
+          display: inline
+
+  .home
+    margin: 0
+
+    .hero-image
+      display: flex
+      justify-content: center
+      width: 60vw
+      height: 100vh
+      overflow: hidden
+
+      img
+        height: 100%
+
+    .hero-title
+      width: 40vw
+      margin-left: 2rem
+      margin-right: 6rem
+
+  .projects
+    .project-list
+      overflow: visible
+
+  .history
+    &-container
+      &--item
+        & > p
+          font-weight: bold
+          width: 30%
+          text-align: right
+          font-size: 24px
+          position: relative
+          font-style: italic
+          display: block
+          line-height: 2
+
+          &::after
+            content: ''
+            display: inline-block
+            width: 36px
+            height: 36px
+            border-radius: 50%
+            background-color: $text-blue-dark
+            position: absolute
+            top: 9px
+            right: -68px
+
+        & > div
+          margin-left: 48px
+          padding-left: 48px
+          width: 70%
+
+          h3
+            font-size: 32px
+            line-height: 1.6
+
+          p
+            display: none
+
+  .interests
+    &-container
+      &--list
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 20px
+
+      &--item
+        width: 100%
+        padding-top: 50%
+        position: relative
+
+        img
+          object-fit: cover
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: 0
+
+  .posts
+    position: relative
+
+    .post-list
+      display: flex
+      scrollbar-width: none
+      overflow: visible
+
+      .post-item-image
+        width: 100%
+        border-radius: 1rem
+        overflow: hidden
+
+        img
+          object-fit: cover
+          height: 100%
+          width: 100%
+
+  footer
+    padding: 5rem
+
+    .top-section
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+
+      .closing-messages
+        h3
+          font-size: 190px
+      
+        p
+          font-size: 32px
+
+      ul
+        text-align: right
+        font-size: 28px
+
+        p
+          font-weight: bold
+          font-size: 32px
+
+    .bottom-section
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-top: 4rem
+
+      .contacts
+        display: flex
+        flex-direction: column
+        gap: .5rem
+
+        p
+          font-weight: bold
+
+        ul
+          li
+            list-style: none
+            display: inline
+
+            a
+              color: $text-blue-light
+      
+      .go-top
+        a
+          color: $text-blue-light
